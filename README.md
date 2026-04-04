@@ -1,125 +1,133 @@
-This project implements a custom Arborescent Garbage Collector (GC) in C, inspired by dynamic graph-based memory management techniques.
+# Arborescent Garbage Collector (C Implementation)
+
+This project implements a custom **Arborescent Garbage Collector (GC)** in C, inspired by dynamic graph-based memory management techniques.
 
 Unlike traditional collectors (e.g., Mark-and-Sweep), this GC:
 
-Tracks object relationships as a reference graph
-Maintains a spanning forest
-Performs immediate cycle collection
-Supports phase-wise visualization using Graphviz (DOT)
+- Tracks object relationships as a **reference graph**
+- Maintains a **spanning forest** to represent reachability
+- Performs **immediate cycle collection**
+- Supports **phase-wise visualization** using Graphviz (DOT format)
 
-The system also includes benchmark programs (fib, sum, ack) to evaluate GC behavior and performance.
+The system also includes benchmark programs (`fib`, `sum`, `ack`) to evaluate GC behavior and performance under different allocation patterns.
 
-⚙️ Features
+---
 
-✅ Custom memory management (no malloc/free directly)
-✅ Graph-based reachability tracking
-✅ Immediate garbage collection (no deferred cycles)
-✅ GC phases:
+## ⚙️ Features
 
-init
-drop
-catch
-collect
+- ✅ Custom memory management (no direct use of `malloc/free`)
+- ✅ Graph-based reachability tracking
+- ✅ Immediate garbage collection (no deferred cycle detection)
+- ✅ Clearly defined GC phases:
+  - `init`
+  - `drop`
+  - `catch`
+  - `collect`
+- ✅ DOT/SVG visualization export
+- ✅ Integrated benchmarks:
+  - Fibonacci
+  - Summation
+  - Ackermann
 
-✅ DOT visualization export
-✅ Benchmark integration:
+---
 
-Fibonacci
-Summation
-Ackermann
-🧩 Project Structure
+## 🧩 Project Structure
 GC-Arborescent/
-│── main.c        # Entry point
-│── gc.c          # Garbage collector implementation
+│── main.c # Entry point
+│── gc.c # Garbage collector implementation
 │── gc.h
-│── bench.c       # Benchmark logic (fib, sum, ack)
+│── bench.c # Benchmark logic (fib, sum, ack)
 │── bench.h
 │── CMakeLists.txt
-🚀 How to Build
+
+---
+
+
+---
+
+## 🚀 How to Build
+
+```bash
 mkdir build
 cd build
 cmake ..
 make
 
-or (CLion auto-build works too)
+---
 
-▶️ How to Run
-./GC_Arborescent
 📊 Visualization (Graphviz)
 
-This project exports GC state as DOT/SVG files.
+This project exports GC states as DOT/SVG files for each phase.
 
-Example code:
+Example:
 gc_init();
-gc_export_dot("graph_init.svg");
+gc_export_dot("graph_init.dot");
 
 gc_drop();
-gc_export_dot("graph_drop.svg");
+gc_export_dot("graph_drop.dot");
 
 gc_catch();
-gc_export_dot("graph_catch.svg");
+gc_export_dot("graph_catch.dot");
 
 gc_collect();
-gc_export_dot("graph_collect.svg");
-🖼️ How to View Graph
+gc_export_dot("graph_collect.dot");
+🖼️ How to View Graphs
 
 Install Graphviz:
 
 sudo apt install graphviz
 
-Generate image:
+Generate and view SVG:
 
-dot -Tsvg graph_init.svg -o output.svg
+dot -Tsvg graph_init.dot -o output.svg
 xdg-open output.svg
 🎨 Node Color Meaning
 Color	Meaning
 🟢 Green	Root / Anchor node
-🔴 Red	Falling (candidate GC)
+🔴 Red	Falling (GC candidate)
 ⚪ Gray	Normal node
 🧪 Benchmarks
 
 The system includes:
 
-fib → recursive allocation (deep tree)
-sum → iterative allocation (many nodes)
-ack → heavy recursion
-
-📌 Observation:
-
-sum → large node count (e.g., 400)
-fib/ack → often optimized → fewer nodes (sometimes 1)
+fib → recursive allocation (deep tree structure)
+sum → iterative allocation (large number of nodes)
+ack → heavy recursion with complex structure
+📌 Observations
+sum → produces a large number of nodes (e.g., ~400)
+fib / ack → often optimized → fewer nodes (sometimes very small graphs)
 📈 Performance Insight
 
-According to research, Arborescent GC:
+According to research, Arborescent GC is:
 
-~4.5× slower than Mark-Sweep (median)
-but provides:
-immediate memory reclamation
-predictable behavior
+~4.5× slower than Mark-Sweep (median case)
+
+However, it provides:
+
+Immediate memory reclamation
+Predictable and deterministic behavior
 🔬 Key Concept
 
 The GC maintains a reference graph:
 
-Nodes = objects
-Edges = pointers
+Nodes → objects
+Edges → pointers
 
-Reachability is tracked via a spanning forest
+Reachability is maintained using a spanning forest.
 
-When an edge is removed:
+When a reference is removed:
 
-drop → mark potentially unreachable nodes
-catch → recover reachable ones
-collect → delete unreachable nodes
+drop → marks potentially unreachable nodes
+catch → restores reachable nodes
+collect → deletes unreachable nodes
+
 ⚠️ Limitations
 Single-threaded design
-Higher overhead than traditional GC
-Visualization can become large (graph scaling issues)
+Higher overhead compared to traditional GC
+Visualization may become large for complex graphs
+
 🔮 Future Improvements
 Multithreading support
-Hybrid GC (ref-count + graph)
-Optimization of ranking & adoption
-Better visualization filtering
-👩‍💻 Author
-
-Mahbuba Habib
-CSE Student | Systems & Research Enthusiast
+Hybrid GC (reference counting + graph-based)
+Optimization of ranking and adoption strategies
+Scalable and filtered visualization
