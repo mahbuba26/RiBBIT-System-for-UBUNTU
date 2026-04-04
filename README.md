@@ -49,13 +49,13 @@ GC-Arborescent/
 
 ---
 
-## How to Build
+## How to Build 
 
-```bash
+'''bash
 mkdir build
 cd build
 cmake ..
-make
+make'''
 
 ---
 
@@ -76,7 +76,7 @@ gc_export_dot("graph_catch.dot");
 gc_collect();
 gc_export_dot("graph_collect.dot");
 
-
+---
 
 ## How to View Graphs
 
@@ -87,7 +87,9 @@ sudo apt install graphviz
 Generate and view SVG:
 
 dot -Tsvg graph_init.dot -o output.svg
+
 xdg-open output.svg
+
 🎨 Node Color Meaning
 Color	Meaning
 🟢 Green	Root / Anchor node
@@ -101,10 +103,14 @@ Color	Meaning
 The system includes:
 
 fib → recursive allocation (deep tree structure)
+
 sum → iterative allocation (large number of nodes)
+
 ack → heavy recursion with complex structure
-📌 Observations
+
+## Observations
 sum → produces a large number of nodes (e.g., ~400)
+
 fib / ack → often optimized → fewer nodes (sometimes very small graphs)
 
 ---
@@ -118,12 +124,15 @@ According to research, Arborescent GC is:
 However, it provides:
 
 Immediate memory reclamation
+
 Predictable and deterministic behavior
-🔬 Key Concept
+
+## Key Concept
 
 The GC maintains a reference graph:
 
 Nodes → objects
+
 Edges → pointers
 
 Reachability is maintained using a spanning forest.
@@ -138,7 +147,9 @@ collect → deletes unreachable nodes
 
 ## Limitations
 Single-threaded design
+
 Higher overhead compared to traditional GC
+
 Visualization may become large for complex graphs
 
 ---
