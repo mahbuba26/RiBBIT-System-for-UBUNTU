@@ -13,7 +13,7 @@ The system also includes benchmark programs (`fib`, `sum`, `ack`) to evaluate GC
 
 ---
 
-## ⚙️ Features
+## Features
 
 - ✅ Custom memory management (no direct use of `malloc/free`)
 - ✅ Graph-based reachability tracking
@@ -31,10 +31,7 @@ The system also includes benchmark programs (`fib`, `sum`, `ack`) to evaluate GC
 
 ---
 
-## 🧩 Project Structure
-
-
----
+## Project Structure
 
 GC-Arborescent/
 │── main.c # Entry point
@@ -52,7 +49,7 @@ GC-Arborescent/
 
 ---
 
-## 🚀 How to Build
+## How to Build
 
 ```bash
 mkdir build
@@ -62,7 +59,7 @@ make
 
 ---
 
-📊 Visualization (Graphviz)
+## Visualization (Graphviz)
 
 This project exports GC states as DOT/SVG files for each phase.
 
@@ -81,7 +78,7 @@ gc_export_dot("graph_collect.dot");
 
 
 
-🖼️ How to View Graphs
+## How to View Graphs
 
 Install Graphviz:
 
@@ -99,7 +96,7 @@ Color	Meaning
 
 ---
 
-🧪 Benchmarks
+## Benchmarks
 
 The system includes:
 
@@ -112,7 +109,7 @@ fib / ack → often optimized → fewer nodes (sometimes very small graphs)
 
 ---
 
-📈 Performance Insight
+## Performance Insight
 
 According to research, Arborescent GC is:
 
@@ -139,14 +136,14 @@ collect → deletes unreachable nodes
 
 ---
 
-⚠️ Limitations
+## Limitations
 Single-threaded design
 Higher overhead compared to traditional GC
 Visualization may become large for complex graphs
 
 ---
 
-🔮 Future Improvements
+## Future Improvements
 Multithreading support
 Hybrid GC (reference counting + graph-based)
 Optimization of ranking and adoption strategies
