@@ -32,15 +32,22 @@ The system also includes benchmark programs (`fib`, `sum`, `ack`) to evaluate GC
 ---
 
 ## 🧩 Project Structure
-GC-Arborescent/
-│── main.c # Entry point
-│── gc.c # Garbage collector implementation
-│── gc.h
-│── bench.c # Benchmark logic (fib, sum, ack)
-│── bench.h
-│── CMakeLists.txt
+
 
 ---
+
+GC-Arborescent/
+│── main.c # Entry point
+
+│── gc.c # Garbage collector implementation
+
+│── gc.h
+
+│── bench.c # Benchmark logic (fib, sum, ack)
+
+│── bench.h
+
+│── CMakeLists.txt
 
 
 ---
@@ -71,6 +78,9 @@ gc_export_dot("graph_catch.dot");
 
 gc_collect();
 gc_export_dot("graph_collect.dot");
+
+
+
 🖼️ How to View Graphs
 
 Install Graphviz:
@@ -86,6 +96,9 @@ Color	Meaning
 🟢 Green	Root / Anchor node
 🔴 Red	Falling (GC candidate)
 ⚪ Gray	Normal node
+
+---
+
 🧪 Benchmarks
 
 The system includes:
@@ -96,6 +109,9 @@ ack → heavy recursion with complex structure
 📌 Observations
 sum → produces a large number of nodes (e.g., ~400)
 fib / ack → often optimized → fewer nodes (sometimes very small graphs)
+
+---
+
 📈 Performance Insight
 
 According to research, Arborescent GC is:
@@ -121,10 +137,14 @@ drop → marks potentially unreachable nodes
 catch → restores reachable nodes
 collect → deletes unreachable nodes
 
+---
+
 ⚠️ Limitations
 Single-threaded design
 Higher overhead compared to traditional GC
 Visualization may become large for complex graphs
+
+---
 
 🔮 Future Improvements
 Multithreading support
