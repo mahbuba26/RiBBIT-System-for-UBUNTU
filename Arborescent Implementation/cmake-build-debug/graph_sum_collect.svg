@@ -1,0 +1,33 @@
+digraph GC {
+  node [shape=circle, style=filled, fontcolor=white];
+  N0 [label="3", fillcolor=lightgray];
+  N1 [label="0", fillcolor=red];
+  N2 [label="0", fillcolor=red];
+  N3 [label="2", fillcolor=lightgray];
+  N4 [label="3", fillcolor=lightgray];
+  N5 [label="1", fillcolor=red];
+  N6 [label="7", fillcolor=green];
+  N7 [label="7", fillcolor=lightgray];
+  N8 [label="3", fillcolor=lightgray];
+  N9 [label="4", fillcolor=lightgray];
+  N10 [label="8", fillcolor=green];
+  N11 [label="3", fillcolor=lightgray];
+  N12 [label="8", fillcolor=green];
+  N13 [label="1", fillcolor=red];
+  N14 [label="1", fillcolor=red];
+  N15 [label="4", fillcolor=lightgray];
+  N16 [label="6", fillcolor=lightgray];
+  N17 [label="0", fillcolor=red];
+  N18 [label="2", fillcolor=red];
+  N19 [label="1", fillcolor=red];
+  N20 [label="7", fillcolor=lightgray];
+  N21 [label="4", fillcolor=lightgray];
+  N3 -> N1;
+  N4 -> N1;
+  N7 -> N2;
+  N9 -> N2;
+  N10 -> N9;
+  N12 -> N4;
+  N20 -> N8;
+  N21 -> N4;
+}

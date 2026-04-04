@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug",
+  "command": "/usr/bin/cc -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles/GC_Arborescent.dir/main.c.o -c \"/home/lenovo/CLionProjects/GC-Arborescent (Copy)/main.c\"",
+  "file": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/main.c",
+  "output": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug/CMakeFiles/GC_Arborescent.dir/main.c.o"
+},
+{
+  "directory": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug",
+  "command": "/usr/bin/cc -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles/GC_Arborescent.dir/gc.c.o -c \"/home/lenovo/CLionProjects/GC-Arborescent (Copy)/gc.c\"",
+  "file": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/gc.c",
+  "output": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug/CMakeFiles/GC_Arborescent.dir/gc.c.o"
+},
+{
+  "directory": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug",
+  "command": "/usr/bin/cc -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles/GC_Arborescent.dir/bench.c.o -c \"/home/lenovo/CLionProjects/GC-Arborescent (Copy)/bench.c\"",
+  "file": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/bench.c",
+  "output": "/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug/CMakeFiles/GC_Arborescent.dir/bench.c.o"
+}
+]

@@ -1,0 +1,3 @@
+/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug/CMakeFiles/GC_Arborescent.dir
+/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/lenovo/CLionProjects/GC-Arborescent (Copy)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

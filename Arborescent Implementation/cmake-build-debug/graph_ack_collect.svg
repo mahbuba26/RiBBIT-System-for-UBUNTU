@@ -1,0 +1,5 @@
+digraph GC {
+  node [shape=circle, style=filled, fontcolor=white];
+  N0 [label="3", fillcolor=lightgray];
+  N1 [label="0", fillcolor=red];
+}
