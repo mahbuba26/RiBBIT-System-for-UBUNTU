@@ -156,6 +156,9 @@ Visualization may become large for complex graphs
 
 ## Future Improvements
 Multithreading support
+
 Hybrid GC (reference counting + graph-based)
+
 Optimization of ranking and adoption strategies
+
 Scalable and filtered visualization
