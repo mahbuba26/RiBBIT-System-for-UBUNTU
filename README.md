@@ -51,7 +51,7 @@ GC-Arborescent/
 
 ## How to Build 
 
-'''bash
+bash
 
 mkdir build
 
@@ -59,7 +59,7 @@ cd build
 
 cmake ..
 
-make'''
+make
 
 ---
 
