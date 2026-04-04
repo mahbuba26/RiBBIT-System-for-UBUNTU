@@ -52,9 +52,13 @@ GC-Arborescent/
 ## How to Build 
 
 '''bash
+
 mkdir build
+
 cd build
+
 cmake ..
+
 make'''
 
 ---
