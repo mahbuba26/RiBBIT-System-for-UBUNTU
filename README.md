@@ -69,15 +69,19 @@ This project exports GC states as DOT/SVG files for each phase.
 
 Example:
 gc_init();
+
 gc_export_dot("graph_init.dot");
 
 gc_drop();
+
 gc_export_dot("graph_drop.dot");
 
 gc_catch();
+
 gc_export_dot("graph_catch.dot");
 
 gc_collect();
+
 gc_export_dot("graph_collect.dot");
 
 ---
